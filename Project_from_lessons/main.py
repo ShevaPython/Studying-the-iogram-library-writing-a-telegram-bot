@@ -21,13 +21,12 @@ async def on_start_up(_):
     print("Готов к работе")
 
 
-@db.message_handler(Text(equals="Давай начнем 🤙"))
+@db.message_handler(commands=['start'])
 async def command_start(message: types.Message):
     await message.answer(
         text=F"Привет 🥳"
-             F"зайди ко мне  ➡️ @Good_teletele_bot И начнем общаться ✅"
-        ,
-    reply_markup=kb)
+             F"зайди ко мне  ➡️ @Good_teletele_bot И начнем общаться ✅",
+        reply_markup=kb)
     await message.delete()
 
 
